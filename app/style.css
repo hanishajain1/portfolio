@@ -1,20 +1,20 @@
 @font-face {
     font-family: 'Gilroy';
-    src: url('/public/fonts/Gilroy-Regular.ttf') format('truetype');
+    src: url('../public/fonts/Gilroy-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gilroy-SemiBold';
-    src: url('/public/fonts/Gilroy-SemiBold.ttf') format('truetype');
+    src: url('../public/fonts/Gilroy-SemiBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Gilroy-MediumItalic';
-    src: url('/public/fonts/Gilroy-MediumItalic.ttf') format('truetype');
+    src: url('../public/fonts/Gilroy-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
 }
@@ -30,13 +30,13 @@ body {
         padding: 3vw;
     }
     .name {
-        font-size: 13.5px !important;
+        font-size: 1.5rem; /* Adjust font size for mobile */
     }
     .surname {
-        font-size: 13.5px !important;
+        font-size: 1.5rem; /* Adjust font size for mobile */
     }
     .nav-right span {
-        font-size: 13.5px !important;
+        font-size: 1.2rem; /* Adjust font size for mobile */
     }
 }
 
