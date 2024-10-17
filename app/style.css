@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('/public/fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-SemiBold';
+    src: url('/public/fonts/Gilroy-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-MediumItalic';
+    src: url('/public/fonts/Gilroy-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+body {
+    margin: 3vh 3vw; /* Universal margin: 3vh vertical, 3vw horizontal */
+    font-family: 'Gilroy', sans-serif;
+    background-color: #F9F8F0;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 3vw;
+    }
+    .name {
+        font-size: 13.5px !important;
+    }
+    .surname {
+        font-size: 13.5px !important;
+    }
+    .nav-right span {
+        font-size: 13.5px !important;
+    }
+}
+
+nav {
+    width: calc(100% - 6vw); /* Adjust width to account for body margin */
+    position: fixed;
+    top: 3vh; /* Margin from top */
+    left: 3vw; /* Align with body margin */
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5vh 2vw;
+    border: 1px solid #333;
+    border-radius: 2vw; /* Responsive border radius */
+    background-color: #B7E0FF;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    justify-content: flex-end;
+    gap: 3vw;
+}
+
+.name {
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-size: 1.5vw;
+}
+
+.surname {
+    font-family: 'Gilroy-MediumItalic', sans-serif;
+    font-size: 1.5vw;
+}
+
+.nav-right span {
+    font-size: 1.5vw;
+}
