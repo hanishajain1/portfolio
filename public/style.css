@@ -65,11 +65,11 @@ body {
     outline: none;
     border-radius: 50em;
     color: white;
-    background-color: aqua;
+    background-color: transparent;
     display: flex;
-    margin-left: 12vw;
-    margin-right: 12vw;
-    height: 37vh;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    height: 43vh;
 }
 
 .profile-img {
@@ -96,7 +96,7 @@ nav {
 }
 
 .nav-button {
-    margin: 0.55vh; /* Vertical spacing between buttons */
+    margin: 0.55vh 0px; /* Vertical spacing between buttons */
     padding: 0.5em 1.2em; /* Padding based on text size */
     border: 1.5px solid white; /* Border around buttons */
     border-radius: 50px; /* Rounded corners */
@@ -112,16 +112,7 @@ nav {
     transition: all 0.3s ease; /* Smooth transition on hover */
 }
 
-@media (max-width: 768px) {
-    .nav-button {
-        margin: 0.55vh 0.55em; /* Vertical spacing between buttons */
-        font-size: 2.5vw;
-    }
 
-    nav {
-        padding: 3.3vh;
-    }
-}
 
 @media (min-width: 769px) {
     nav {
@@ -133,7 +124,7 @@ nav {
 .nav-button:hover {
     background-color: white; /* Invert colors on hover */
     color: #0B192C; /* Change text color */
-    border-radius: 25px; /* Change border radius slightly */
+    border-radius: 55px; /* Change border radius slightly */
     font-size: 1.23vw; /* Slightly increase font size */
 }
 
@@ -141,5 +132,51 @@ nav {
 .nav-button.active {
     background-color: white;
     color: #0B192C;
-    border-radius: 25px;
+    padding: 0.5em 2.5em;
+    border: none;
+    border-radius: 55px;
+}
+
+@media (max-width: 768px) {
+
+    .nav-button.active{
+        padding: 0.7vh 2.3em; /* Vertical spacing between buttons */
+        font-size: 3vw;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: white;
+        color: #0B192C;
+    }
+
+    .nav-button {
+        padding: 0.7vh 0.88em; /* Vertical spacing between buttons */
+        font-size: 3vw;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 1.2vw; /* Vertical spacing between buttons */
+        text-align: center;
+        display: inline-block; /* Button size based on content */
+        white-space: nowrap; /* Prevent text wrapping */
+        width: auto; /* Make button width flexible based on text */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        transition: all 0.3s ease; 
+    }
+
+    nav {
+        margin: 3vh, 1vw;
+        padding: 1vw, 3vh;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-header {
+        margin-left: 7vw;
+        margin-right: 7vw;
+        width: 100%;
+        height: 77vh;
+
+    }
 }
