@@ -89,6 +89,18 @@ body {
     outline: none;
     border-radius: 50em;
     opacity: 77%;
+    transition: all 0.3s ease-in;
+}
+
+.profile-img.color {
+    position: absolute;
+    z-index: 300;
+    opacity: 0;
+    transition: all ease-in-out 0.5s;
+}
+
+.profile-img.color:hover{
+    opacity: 77%;
 }
 
 nav {
@@ -189,7 +201,7 @@ nav {
 
     .profile-header {
         margin: 0 auto; /* Center the profile header */
-        width: 73vw; /* Make it 90% of the viewport width */
+        width: 75vw; /* Make it 90% of the viewport width */
         height: 60vh; /* Adjust height automatically */
     }
 
