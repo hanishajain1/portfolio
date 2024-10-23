@@ -179,8 +179,8 @@ nav {
 
     nav {
         top: 3.3vh;
-        left: 1vw;
-        right: 1vw;
+        left: auto;
+        right: auto;
         padding: 1vw, 3vh;
         flex-direction: row;
         justify-content: center;
