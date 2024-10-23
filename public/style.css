@@ -198,4 +198,15 @@ nav {
         height: auto; /* Maintain the aspect ratio */
         border-radius: 50em; /* Keep the rounded effect */
     }
+
+    .title {
+        margin-top: 10vh;
+        margin-bottom: -4.3vh;
+        font-size: 19vw;
+    }
+
+    .title.Jain {
+        font-size: 19vw;
+        margin-top: -4.3vh;
+    }
 }
