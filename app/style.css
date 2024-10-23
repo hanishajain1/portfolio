@@ -1,7 +1,14 @@
 @font-face {
-    font-family: 'Gilroy';
+    font-family: 'Gilroy-Regular';
     src: url('/public/fonts/Gilroy-Regular.ttf') format('truetype');
     font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gilroy-Bold";
+    src: url('/public/fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -19,69 +26,120 @@
     font-style: italic;
 }
 
-body {
-    margin: 3vh 3vw; /* Universal margin: 3vh vertical, 3vw horizontal */
-    font-family: 'Gilroy', sans-serif;
-    background-color: #F9F8F0;
+@font-face {
+    font-family: 'Gilroy-ExtraBold';
+    src: url('/public/fonts/Gilroy-ExtraBold.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 3vw;
-    }
-    .name {
-        font-size: 1.5rem; /* Adjust font size for mobile */
-    }
-    .surname {
-        font-size: 1.5rem; /* Adjust font size for mobile */
-    }
-    .nav-right span {
-        font-size: 1.2rem; /* Adjust font size for mobile */
-    }
+@font-face {
+    font-family: 'Gilroy-ExtraBoldItalic';
+    src: url('/public/fonts/Gilroy-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+body {
+    margin: 1.5vw; /* Universal margin */
+    font-family: 'Gilroy', sans-serif;
+    background-color: #0B192C;
+}
+
+.title {
+    margin-top: 11vh;
+    z-index: 10;
+    font-size: 15vw;
+    overflow: hidden;
+    color: white;
+    font-family: 'Gilroy-ExtraBold', sans-serif;
+    text-align: center;
+}
+
+.title.Jain {
+    font-family: 'Gilroy-ExtraBoldItalic', sans-serif;
+}
+
+.profile-header {
+    border: none;
+    outline: none;
+    border-radius: 50em;
+    color: white;
+    background-color: aqua;
+    display: flex;
+    margin-left: 12vw;
+    margin-right: 12vw;
+    height: 37vh;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    outline: none;
+    border-radius: 50em;
 }
 
 nav {
-    width: calc(100% - 6vw); /* Adjust width to account for body margin */
     position: fixed;
-    top: 3vh; /* Margin from top */
-    left: 3vw; /* Align with body margin */
+    top: 0; /* Align with the top */
+    left: 0; /* Align with the left */
+    right: 0; /* Extend to the right edge */
     display: flex;
-    justify-content: space-between;
-    padding: 2.5vh 2vw;
-    border: 1px solid #333;
-    border-radius: 2vw; /* Responsive border radius */
-    background-color: #B7E0FF;
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    flex-direction: column; /* Default to vertical layout */
+    align-items: flex-end; /* Align items to the end */
+    padding: 1.5vw;
+    box-sizing: border-box; /* Include padding and border in total width and height */
     overflow: hidden; /* Prevent overflow */
+    z-index: 1000; /* Ensure nav is on top */
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+.nav-button {
+    margin: 0.55vh; /* Vertical spacing between buttons */
+    padding: 0.5em 1.2em; /* Padding based on text size */
+    border: 1.5px solid white; /* Border around buttons */
+    border-radius: 50px; /* Rounded corners */
+    font-size: 1.13vw;
+    color: white;
+    background-color: transparent; /* Transparent background */
+    font-family: 'Gilroy-Bold', sans-serif;
+    text-align: center;
+    display: inline-block; /* Button size based on content */
+    white-space: nowrap; /* Prevent text wrapping */
+    width: auto; /* Make button width flexible based on text */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: all 0.3s ease; /* Smooth transition on hover */
 }
 
-.nav-left, .nav-right {
-    display: flex;
-    align-items: center;
+@media (max-width: 768px) {
+    .nav-button {
+        margin: 0.55vh 0.55em; /* Vertical spacing between buttons */
+        font-size: 2.5vw;
+    }
+
+    nav {
+        padding: 3.3vh;
+    }
 }
 
-.nav-right {
-    justify-content: flex-end;
-    gap: 3vw;
+@media (min-width: 769px) {
+    nav {
+        align-items: flex-end; /* Align items to start for larger devices */
+    }
 }
 
-.name {
-    font-family: 'Gilroy-SemiBold', sans-serif;
-    font-size: 1.5vw;
+/* Hover state */
+.nav-button:hover {
+    background-color: white; /* Invert colors on hover */
+    color: #0B192C; /* Change text color */
+    border-radius: 25px; /* Change border radius slightly */
+    font-size: 1.23vw; /* Slightly increase font size */
 }
 
-.surname {
-    font-family: 'Gilroy-MediumItalic', sans-serif;
-    font-size: 1.5vw;
-}
-
-.nav-right span {
-    font-size: 1.5vw;
+/* Active state */
+.nav-button.active {
+    background-color: white;
+    color: #0B192C;
+    border-radius: 25px;
 }
