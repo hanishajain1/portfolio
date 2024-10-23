@@ -53,6 +53,11 @@ body {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
+    cursor: url('/public/image/cursor.png'), auto;
+}
+
+.element {
+    cursor: url('/path/to/cursor.png') 16 16, auto; /* 16 16 is the hotspot */
 }
 
 .fold {
