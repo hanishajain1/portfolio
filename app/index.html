@@ -15,10 +15,12 @@
             <button class="nav-button">Work</button>
             <button class="nav-button">Contact</button>
         </nav>
-        <div class="headshot">
-            <h1 class="title Hanisha">HANISHA</h1>
-            <div class="profile-header" id="profile-header"></div>
-            <h1 class="title Jain">JAIN</h1>
+        <div class="fold">
+            <div class="headshot">
+                <h1 class="title Hanisha">HANISHA</h1>
+                <div class="profile-header" id="profile-header"></div>
+                <h1 class="title Jain">JAIN</h1>
+            </div>
         </div>
         
     </main>
@@ -36,19 +38,6 @@
                  button.classList.add('active');
              });
          });
-
-         const profileHeader = document.getElementById('profile-header');
-        let isOriginalImage = true; // Flag to track the image state
-
-        // Click event to change image
-        profileHeader.addEventListener('click', () => {
-            if (isOriginalImage) {
-                profileHeader.style.backgroundImage = "url('/public/image/profile.png')";
-            } else {
-                profileHeader.style.backgroundImage = "url('/public/image/profileBW.png')";
-            }
-            isOriginalImage = !isOriginalImage; // Toggle the image state
-        });
     </script>
 </body>
 </html>

@@ -41,17 +41,28 @@
 }
 
 body {
-    margin: 1.5vw; /* Universal margin */
     font-family: 'Gilroy', sans-serif;
     background-color: #0B192C;
+}
+
+.fold {
+    padding: 1.5vh 2vw; /* Keep your padding */
+    border: 3px solid white; /* Border all around */
+    border-radius: 50px; /* Adjust for a more rounded effect */
+    width: 99.2vw; /* Full viewport width */
+    height: 99.2vh; /* Full viewport height */
+    box-sizing: border-box; /* Include padding and border in width and height */
+    overflow: hidden; /* Prevent overflow of child elements */
+    position: relative; /* Maintain position context for absolute children */
+    margin: 0; /* Reset margin */
 }
 
 .title {
     z-index: 101;
     position: relative;
     margin-top: 3vh;
-    margin-bottom: -10vh;
-    font-size: 15vw;
+    margin-bottom: -7.7vh;
+    font-size: 13.1vw;
     overflow: hidden;
     color: white;
     font-family: 'Gilroy-ExtraBold', sans-serif;
@@ -67,7 +78,9 @@ body {
 
 .profile-header {
     background-image: url('/public/image/profileBW.png');
-    object-fit: contain;
+    object-fit: cover;
+    background-size: cover; /* Ensures the image fills the div */
+    background-position: center; /* Center the image */
     position: relative;
     z-index: 50;
     border: none;
@@ -76,13 +89,16 @@ body {
     color: white;
     background-color: transparent;
     display: flex;
-    margin-left: 15vw;
-    margin-right: 15vw;
-    height: 46vh;
+    margin-left: 21vw;
+    margin-right: 21vw;
+    height: 37vh;
     opacity: 77%;
     transition: all ease-in-out 0.3s;
 }
 
+.profile-header:hover {
+    background-image: url('/public/image/profile.png'); /* Image shown on hover */
+}
 nav {
     position: fixed;
     top: 0; /* Align with the top */
