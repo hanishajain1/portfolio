@@ -21,6 +21,14 @@
                 <div class="profile-header" id="profile-header"></div>
                 <h1 class="title Jain">JAIN</h1>
             </div>
+            
+            <div class="box-bottom" id="box-bottom">
+                <div class="circle-bob"></div>
+                <div class="product-designer-div">
+                    <h1>Product Designer</h1>
+                </div>
+                <div class="circle-bob"></div>
+            </div>
         </div>
         
     </main>
@@ -38,6 +46,29 @@
                  button.classList.add('active');
              });
          });
+
+          // Mouse move effect on the profile header
+        const profileHeader = document.getElementById('profile-header');
+        const movementStrength = 30; // Max move distance in pixels
+
+        // Get the viewport width and height
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        // Event listener for mouse movement
+        document.addEventListener('mousemove', (event) => {
+            // Calculate how much the mouse has moved from the center
+            const mouseX = (event.clientX / windowWidth) * 2 - 1;
+            const mouseY = (event.clientY / windowHeight) * 2 - 1;
+
+            // Move the profile image by 20px based on mouse direction
+            const moveX = mouseX * movementStrength;
+            const moveY = mouseY * movementStrength;
+
+            // Apply the transform to the profile-header div
+            profileHeader.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            profileHeader.style.transition = 'transform 0.1s ease-out'; // Smooth transition
+        });
     </script>
 </body>
 </html>
