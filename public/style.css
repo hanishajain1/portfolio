@@ -47,8 +47,10 @@ body {
 }
 
 .title {
-    margin-top: 11vh;
-    z-index: 10;
+    z-index: 101;
+    position: relative;
+    margin-top: 3vh;
+    margin-bottom: -12vh;
     font-size: 15vw;
     overflow: hidden;
     color: white;
@@ -57,10 +59,15 @@ body {
 }
 
 .title.Jain {
+    position: relative;
+    z-index: 101;
     font-family: 'Gilroy-ExtraBoldItalic', sans-serif;
+    margin-top: -10vh;
 }
 
 .profile-header {
+    position: relative;
+    z-index: 50;
     border: none;
     outline: none;
     border-radius: 50em;
@@ -69,22 +76,24 @@ body {
     display: flex;
     margin-left: 15vw;
     margin-right: 15vw;
-    height: 43vh;
+    height: 46vh;
 }
 
 .profile-img {
+    position: relative;
+    z-index: 50;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border: none;
     outline: none;
     border-radius: 50em;
+    opacity: 77%;
 }
 
 nav {
     position: fixed;
     top: 0; /* Align with the top */
-    left: 0; /* Align with the left */
     right: 0; /* Extend to the right edge */
     display: flex;
     flex-direction: column; /* Default to vertical layout */
