@@ -6,6 +6,13 @@
 }
 
 @font-face {
+    font-family: 'Gilroy-Light';
+    src: url('/public/fonts/Gilroy-Light.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
     font-family: "Gilroy-Bold";
     src: url('/public/fonts/Gilroy-Bold.ttf') format('truetype');
     font-weight: 700;
@@ -43,14 +50,17 @@
 body {
     font-family: 'Gilroy', sans-serif;
     background-color: #0B192C;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .fold {
     padding: 1.5vh 2vw; /* Keep your padding */
-    border: 3px solid white; /* Border all around */
+    border: 1.9px solid white; /* Border all around */
     border-radius: 50px; /* Adjust for a more rounded effect */
-    width: 99.2vw; /* Full viewport width */
-    height: 99.2vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
     box-sizing: border-box; /* Include padding and border in width and height */
     overflow: hidden; /* Prevent overflow of child elements */
     position: relative; /* Maintain position context for absolute children */
@@ -60,7 +70,7 @@ body {
 .title {
     z-index: 101;
     position: relative;
-    margin-top: 3vh;
+    margin-top: 1.5vh;
     margin-bottom: -7.7vh;
     font-size: 13.1vw;
     overflow: hidden;
@@ -129,7 +139,41 @@ nav {
     transition: all 0.3s ease; /* Smooth transition on hover */
 }
 
+.box-bottom {
+    color: white;
+    position: absolute;
+    bottom: 0px; /* Distance from the bottom */
+    left: 50%; /* Start the div from the horizontal center */
+    transform: translateX(-50%); /* Shift the div back by half its width to fully center it */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw; /* Adjust width as needed */
+    text-align: center;
+}
 
+
+.circle-bob {
+    background-image: url('/public/image/circle.png');
+    background-size: cover;
+    background-repeat: no-repeat; /* Ensure no repetition */
+    background-position: center;
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+}
+
+.product-designer-div {
+    background-image: url('/public/image/bottom-rectangle.png');
+    background-position: center;
+    background-repeat: no-repeat; /* Ensure no repetition */
+    background-size: contain;
+    font-size: 1.5vw;
+    height: auto;
+    width: 66%;
+    font-family: 'Gilroy-Light', sans-serif;
+}
 
 @media (min-width: 769px) {
     nav {
@@ -155,9 +199,8 @@ nav {
 }
 
 @media (max-width: 768px) {
-
-    .title {
-        margin-top: 15vh;
+    .headshot {
+        margin-top: 16vh;
     }
 
     .nav-button.active{
@@ -185,6 +228,45 @@ nav {
         transition: all 0.3s ease; 
     }
 
+    .circle-bob {
+        width: 2.1em;
+        height: 2.1em;
+    }
+
+    .box-bottom {
+        width: 100vw; /* Full width of the viewport */
+        position: fixed; /* Ensure it stays at the bottom */
+        bottom: 0; /* Stick to the bottom */
+        height: 10vh; /* Adjust height to fill the space */
+        display: flex; /* Flexbox for horizontal alignment */
+        justify-content: center; /* Center the content horizontally */
+        align-items: center; /* Center the content vertically */
+        gap: 1vw; /* Optional: Add some space between elements */
+        margin: 0; /* Remove any margin */
+        padding: 0; /* Remove any padding */
+    }
+    
+    .product-designer-div {
+        font-size: 3vw;
+        text-align: center;
+        background-size: 100% 100%;
+        background-position: bottom; /* Center the image */
+        background-repeat: no-repeat; /* Prevent repetition */
+        width: 66%; /* Let the width be dynamic */
+        height: 100%; /* Make it fill the height of the div */
+        margin: 0; /* Remove margins */
+        padding: 0; /* Remove padding */
+        display: flex; /* Flexbox for better alignment */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+    }
+    
+    .circle-bob {
+        width: 2.5em; /* Adjust as needed */
+        height: 2.5em; /* Adjust as needed */
+        background-size: cover; /* Ensure the image covers the circle */
+        margin: 0 1vw; /* Optional: Add margin for space between the circles and text */
+    }
     nav {
         top: 3.3vh;
         left: auto;
@@ -195,21 +277,25 @@ nav {
         align-items: center;
     }
 
-    .profile-header {
-        margin: 0 auto; /* Center the profile header */
-        width: 75vw; /* Make it 90% of the viewport width */
-        height: 60vh; /* Adjust height automatically */
+    .fold {
+        margin-top: 0;
+        margin-left: 0;
+        border: 1px solid white;
+        border-radius: 15px;
+        box-sizing: border-box;
     }
 
-    .profile-img {
-        width: 100%; /* Make sure the image fits within the parent container */
-        height: auto; /* Maintain the aspect ratio */
-        border-radius: 50em; /* Keep the rounded effect */
+    .profile-header {
+        margin: 0 auto; /* Center the profile header */
+        border-radius: 50em;
+        background-position: 64% center;
+        width: 60vw; /* Make it 90% of the viewport width */
+        height: 55vh; /* Adjust height automatically */
     }
 
     .title {
         margin-top: 10vh;
-        margin-bottom: -4.3vh;
+        margin-bottom: -5vh;
         font-size: 19vw;
     }
 
