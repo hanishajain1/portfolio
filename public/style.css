@@ -50,7 +50,7 @@ body {
     z-index: 101;
     position: relative;
     margin-top: 3vh;
-    margin-bottom: -12vh;
+    margin-bottom: -10vh;
     font-size: 15vw;
     overflow: hidden;
     color: white;
@@ -148,6 +148,10 @@ nav {
 
 @media (max-width: 768px) {
 
+    .title {
+        margin-top: 15vh;
+    }
+
     .nav-button.active{
         padding: 0.7vh 2.3em; /* Vertical spacing between buttons */
         font-size: 3vw;
@@ -174,7 +178,9 @@ nav {
     }
 
     nav {
-        margin: 3vh, 1vw;
+        top: 3.3vh;
+        left: 1vw;
+        right: 1vw;
         padding: 1vw, 3vh;
         flex-direction: row;
         justify-content: center;
