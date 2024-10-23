@@ -188,14 +188,14 @@ nav {
     }
 
     .profile-header {
-        margin-left: 5vw;
-        margin-right: 5vw;
-        width: 100%;
-        height: 88vh;
+        margin: 0 auto; /* Center the profile header */
+        width: 70vw; /* Make it 90% of the viewport width */
+        height: 60vh; /* Adjust height automatically */
     }
 
     .profile-img {
-        width: 100%;
-        height: 100%;
+        width: 100%; /* Make sure the image fits within the parent container */
+        height: auto; /* Maintain the aspect ratio */
+        border-radius: 50em; /* Keep the rounded effect */
     }
 }
