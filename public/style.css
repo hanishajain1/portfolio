@@ -6,6 +6,13 @@
 }
 
 @font-face {
+    font-family: 'Gilroy-Thin';
+    src: url('/public/fonts/Gilroy-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Gilroy-Light';
     src: url('/public/fonts/Gilroy-Light.ttf') format('truetype');
     font-weight: 100;
@@ -62,6 +69,7 @@ body {
 
 /* Add this to your existing CSS */
 .splash {
+    font-family: 'Gilroy-Light', sans-serif;
     position: fixed; /* Cover the whole viewport */
     top: 0;
     left: 0;
@@ -73,15 +81,15 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #0B192C; /* Background color */
-    color: white; /* Text color */
-    font-size: 3em; /* Adjust size as needed */
+    color: white;
+    font-size: 1.5vw; /* Adjust size as needed */
     animation: slideIn 2s forwards; /* Trigger animation */
     z-index: 100; /* Ensure it is on top */
 }
 
 @keyframes slideIn {
     0% {
-        transform: translateY(100%); /* Start from below the screen */
+        transform: translateY(10%); /* Start from below the screen */
         opacity: 0; /* Start invisible */
     }
     100% {
