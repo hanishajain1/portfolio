@@ -205,7 +205,7 @@ nav {
 
 @media (max-width: 768px) {
     .headshot {
-        margin-top: 16vh;
+        margin-top: 13.1vh;
     }
 
     .nav-button.active{
@@ -306,6 +306,6 @@ nav {
 
     .title.Jain {
         font-size: 19vw;
-        margin-top: -4.3vh;
+        margin-top: -6.5vh;
     }
 }
