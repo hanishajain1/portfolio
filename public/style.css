@@ -167,6 +167,42 @@ nav {
     border-radius: 55px;
 }
 
+.box-bottom {
+    color: white;
+    position: absolute;
+    bottom: 0px; /* Distance from the bottom */
+    left: 50%; /* Start the div from the horizontal center */
+    transform: translateX(-50%); /* Shift the div back by half its width to fully center it */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw; /* Adjust width as needed */
+    text-align: center;
+}
+
+
+.circle-bob {
+    background-image: url('/public/image/circle.png');
+    background-size: cover;
+    background-repeat: no-repeat; /* Ensure no repetition */
+    background-position: center;
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+}
+
+.product-designer-div {
+    background-image: url('/public/image/bottom-rectangle.png');
+    background-position: center;
+    background-repeat: no-repeat; /* Ensure no repetition */
+    background-size: contain;
+    font-size: 1.5vw;
+    height: auto;
+    width: 66%;
+    font-family: 'Gilroy-Light', sans-serif;
+}
+
 @media (max-width: 768px) {
     .headshot {
         margin-top: 13.1vh;
@@ -272,41 +308,4 @@ nav {
         font-size: 19vw;
         margin-top: -6.5vh;
     }
-}
-
-
-.box-bottom {
-    color: white;
-    position: absolute;
-    bottom: 0px; /* Distance from the bottom */
-    left: 50%; /* Start the div from the horizontal center */
-    transform: translateX(-50%); /* Shift the div back by half its width to fully center it */
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 80vw; /* Adjust width as needed */
-    text-align: center;
-}
-
-
-.circle-bob {
-    background-image: url('/public/image/circle.png');
-    background-size: cover;
-    background-repeat: no-repeat; /* Ensure no repetition */
-    background-position: center;
-    width: 6em;
-    height: 6em;
-    border-radius: 50%;
-}
-
-.product-designer-div {
-    background-image: url('/public/image/bottom-rectangle.png');
-    background-position: center;
-    background-repeat: no-repeat; /* Ensure no repetition */
-    background-size: contain;
-    font-size: 1.5vw;
-    height: auto;
-    width: 66%;
-    font-family: 'Gilroy-Light', sans-serif;
 }
