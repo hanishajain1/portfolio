@@ -55,16 +55,12 @@
 }
 
 body {
+    cursor: none;
     font-family: 'Gilroy', sans-serif;
     background-color: #0B192C;
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
-    cursor: url('/public/image/cursor.png'), auto;
-}
-
-.element {
-    cursor: url('/path/to/cursor.png') 16 16, auto; /* 16 16 is the hotspot */
 }
 
 /* Add this to your existing CSS */
@@ -114,6 +110,7 @@ body {
 }
 
 .fold {
+    pointer-events: auto;
     display: none;
     position: relative !important;
     padding: 1.5vh 2vw; /* Keep your padding */
@@ -185,11 +182,20 @@ body {
     margin-right: 21vw;
     height: 37vh;
     opacity: 77%;
-    transition: all ease-in-out 0.3s;
+    transition: all 0.5s ease-in-out;
 }
 
 .profile-header:hover {
     background-image: url('/public/image/profile.png'); /* Image shown on hover */
+}
+
+.section2 {
+    display: none;
+    position: relative;
+    cursor: none;
+    pointer-events: auto;
+    width: 100vw;
+    height: 100vw;
 }
 
 nav {
@@ -203,6 +209,28 @@ nav {
     box-sizing: border-box; /* Include padding and border in total width and height */
     overflow: hidden; /* Prevent overflow */
     z-index: 1000; /* Ensure nav is on top */
+}
+
+.cursor-camera {
+    position: fixed; /* Sticks to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    pointer-events: none; /* Allow interactions with underlying elements */
+    z-index: 9998; /* Just below the custom cursor */
+}
+
+.custom-cursor {
+    position: absolute;
+    background-image: url('/public/image/cursor.svg');
+    background-size: 50px 50px;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    pointer-events: none; /* Prevent the cursor from intercepting hover events */
+    z-index: 9999; /* Ensure it stays on top */
+    transition: transform 0.1s ease-out;
 }
 
 .nav-button {
@@ -222,11 +250,6 @@ nav {
     transition: all 0.3s ease; /* Smooth transition on hover */
 }
 
-.full-sc {
-    width: 100vw;
-    height: 100vh;
-}
-
 @media (min-width: 769px) {
     nav {
         align-items: flex-end; /* Align items to start for larger devices */
@@ -243,6 +266,7 @@ nav {
 
 /* Active state */
 .nav-button.active {
+    cursor: none;
     background-color: white;
     color: #0B192C;
     padding: 0.5em 2.5em;

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,22 @@
     <link rel="preload" href="/public/image/profileBW.png" as="image">
     <link rel="preload" href="/public/image/profile.png" as="image">
 </head>
+
 <body>
     <main>
         <div class="splash" id="splash">
             <h1>Designing experiences that drive change</h1>
         </div>
-        <nav class="navbar">
+        <nav class="nav">
             <button class="nav-button active">Hey !</button>
             <button class="nav-button">Who am I?</button>
             <button class="nav-button">Skills</button>
             <button class="nav-button">Work</button>
             <button class="nav-button">Contact</button>
         </nav>
-
+        <div class="cursor-camera">
+            <div class="custom-cursor" id="custom-cursor"></div>
+        </div>
         <div class="fold">
             <div class="headshot">
                 <h1 class="title Hanisha">HANISHA</h1>
@@ -36,13 +40,21 @@
             </div>
         </div>
 
-        <div class="full-sc">
-            Text
+        <div class="section2">
         </div>
-        
     </main>
-
     <script>
+
+        // Custom cursor
+        const customCursor = document.getElementById('custom-cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            const cursorX = e.clientX - customCursor.offsetWidth / 2;
+            const cursorY = e.clientY - customCursor.offsetHeight / 2;
+
+            // Correct string interpolation with backticks
+            customCursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+        });
 
         // Preload images
         const images = [
@@ -61,22 +73,23 @@
 
         preloadImages(images);
 
-         // Select all buttons inside the navbar
-         const buttons = document.querySelectorAll('.nav-button');
+        // Select all buttons inside the navbar
+        const buttons = document.querySelectorAll('.nav-button');
 
-         // Add event listener to each button
+        // Add event listener to each button
         buttons.forEach(button => {
-             button.addEventListener('click', () => {
-                 // Remove 'active' class from all buttons
-                 buttons.forEach(btn => btn.classList.remove('active'));
-                 // Add 'active' class to the clicked button
-                 button.classList.add('active');
-             });
-         });
+            button.addEventListener('click', () => {
+                // Remove 'active' class from all buttons
+                buttons.forEach(btn => btn.classList.remove('active'));
+                // Add 'active' class to the clicked button
+                button.classList.add('active');
+            });
+        });
 
-          // Mouse move effect on the profile header
+        // Mouse move effect on the profile header
         const profileHeader = document.getElementById('profile-header');
         const movementStrength = 21; // Max move distance in pixels
+        const fold = document.querySelector('.fold');
 
         // Get the viewport width and height
         const windowWidth = window.innerWidth;
@@ -98,20 +111,22 @@
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-            const navbar = document.querySelector('.navbar')
+            const nav = document.querySelector('.nav')
             const splash = document.getElementById('splash');
             const fold = document.querySelector('.fold');
+            const section2 = document.querySelector('.section2')
             const titleHanisha = document.querySelector('.title');
             const titleJain = document.querySelector('.title.Jain');
-        
+
             // Set a timeout for the duration of the splash animation
             setTimeout(() => {
                 splash.style.display = 'none'; // Hide splash
                 fold.style.display = 'block'; // Show fold
-                navbar.style.display = 'flex';
+                section2.style.display = 'block';
+                nav.style.display = 'flex';
                 fold.classList.add('fade-in'); // Add fade-in class to fold
 
-                 // Trigger animations for titles
+                // Trigger animations for titles
                 titleHanisha.style.animation = 'titleHanisha 2s forwards'; // Apply animation to Hanisha title
                 titleJain.style.animation = 'titleJain 2s forwards'; // Apply animation to Jain title after a delay
                 titleHanisha.style.opacity = '1'; // Ensure Hanisha title is visible
@@ -119,6 +134,8 @@
 
             }, 3000); // Duration must match the splash animation duration
         });
+
     </script>
 </body>
+
 </html>
