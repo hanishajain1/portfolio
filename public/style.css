@@ -61,6 +61,7 @@ body {
 }
 
 .fold {
+    position: relative !important;
     padding: 1.5vh 2vw; /* Keep your padding */
     border: 1.9px solid white; /* Border all around */
     border-radius: 50px; /* Adjust for a more rounded effect */
@@ -68,7 +69,6 @@ body {
     height: 100vh; /* Full viewport height */
     box-sizing: border-box; /* Include padding and border in width and height */
     overflow: hidden; /* Prevent overflow of child elements */
-    position: relative; /* Maintain position context for absolute children */
     margin: 0; /* Reset margin */
 }
 
@@ -144,6 +144,11 @@ nav {
     transition: all 0.3s ease; /* Smooth transition on hover */
 }
 
+.full-sc {
+    width: 100vw;
+    height: 100vh;
+}
+
 @media (min-width: 769px) {
     nav {
         align-items: flex-end; /* Align items to start for larger devices */
@@ -169,7 +174,7 @@ nav {
 
 .box-bottom {
     color: white;
-    position: absolute;
+    position: absolute !important;
     bottom: 0px; /* Distance from the bottom */
     left: 50%; /* Start the div from the horizontal center */
     transform: translateX(-50%); /* Shift the div back by half its width to fully center it */
