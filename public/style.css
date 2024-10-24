@@ -123,6 +123,11 @@ body {
     margin: 0; /* Reset margin */
 }
 
+.headshot {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .title {
     z-index: 101;
     position: relative;
@@ -139,7 +144,7 @@ body {
     position: relative;
     z-index: 101;
     font-family: 'Gilroy-ExtraBoldItalic', sans-serif;
-    margin-top: -10vh;
+    margin-top: -8.2vh;
     animation: titleJain 2s forward 5s;
 }
 
@@ -312,8 +317,14 @@ nav {
 }
 
 @media (max-width: 768px) {
+
+    .cursor-camera{
+        display: none;
+    }
+
     .headshot {
-        margin-top: 13.1vh;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     .nav-button.active{
@@ -414,6 +425,6 @@ nav {
 
     .title.Jain {
         font-size: 19vw;
-        margin-top: -6.5vh;
+        margin-top: -6.6vh;
     }
 }
