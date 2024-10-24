@@ -71,7 +71,33 @@
             });
         };
 
-        preloadImages(images);
+        document.addEventListener('DOMContentLoaded', () => {
+
+            preloadImages(images);
+
+            const nav = document.querySelector('.nav')
+            const splash = document.getElementById('splash');
+            const fold = document.querySelector('.fold');
+            const section2 = document.querySelector('.section2')
+            const titleHanisha = document.querySelector('.title');
+            const titleJain = document.querySelector('.title.Jain');
+
+            // Set a timeout for the duration of the splash animation
+            setTimeout(() => {
+                splash.style.display = 'none'; // Hide splash
+                fold.style.display = 'block'; // Show fold
+                section2.style.display = 'block';
+                nav.style.display = 'flex';
+                fold.classList.add('fade-in'); // Add fade-in class to fold
+
+                // Trigger animations for titles
+                titleHanisha.style.animation = 'titleHanisha 2s forwards'; // Apply animation to Hanisha title
+                titleJain.style.animation = 'titleJain 2s forwards'; // Apply animation to Jain title after a delay
+                titleHanisha.style.opacity = '1'; // Ensure Hanisha title is visible
+                titleJain.style.opacity = '1'; // Ensure Jain title is visible
+
+            }, 3000); // Duration must match the splash animation duration
+        });
 
         // Select all buttons inside the navbar
         const buttons = document.querySelectorAll('.nav-button');
@@ -108,31 +134,6 @@
             // Apply the transform to the profile-header div
             profileHeader.style.transform = `translate(${moveX}px, ${moveY}px)`;
             profileHeader.style.transition = 'transform 0.1s ease-out'; // Smooth transition
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const nav = document.querySelector('.nav')
-            const splash = document.getElementById('splash');
-            const fold = document.querySelector('.fold');
-            const section2 = document.querySelector('.section2')
-            const titleHanisha = document.querySelector('.title');
-            const titleJain = document.querySelector('.title.Jain');
-
-            // Set a timeout for the duration of the splash animation
-            setTimeout(() => {
-                splash.style.display = 'none'; // Hide splash
-                fold.style.display = 'block'; // Show fold
-                section2.style.display = 'block';
-                nav.style.display = 'flex';
-                fold.classList.add('fade-in'); // Add fade-in class to fold
-
-                // Trigger animations for titles
-                titleHanisha.style.animation = 'titleHanisha 2s forwards'; // Apply animation to Hanisha title
-                titleJain.style.animation = 'titleJain 2s forwards'; // Apply animation to Jain title after a delay
-                titleHanisha.style.opacity = '1'; // Ensure Hanisha title is visible
-                titleJain.style.opacity = '1'; // Ensure Jain title is visible
-
-            }, 3000); // Duration must match the splash animation duration
         });
 
     </script>
