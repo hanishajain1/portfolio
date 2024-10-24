@@ -143,6 +143,29 @@ body {
     z-index: 101;
     font-family: 'Gilroy-ExtraBoldItalic', sans-serif;
     margin-top: -10vh;
+    animation: titleJain 2s forward 5s;
+}
+
+@keyframes titleHanisha {
+    0% {
+        transform: translateX(-5%); /* Start from the left */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End at its position */
+        opacity: 1; /* End visible */
+    }
+}
+
+@keyframes titleJain {
+    0% {
+        transform: translateX(5%); /* Start from the right */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateX(0); /* End at its position */
+        opacity: 1; /* End visible */
+    }
 }
 
 .profile-header {

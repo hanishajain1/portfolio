@@ -65,7 +65,7 @@
          const buttons = document.querySelectorAll('.nav-button');
 
          // Add event listener to each button
-         buttons.forEach(button => {
+        buttons.forEach(button => {
              button.addEventListener('click', () => {
                  // Remove 'active' class from all buttons
                  buttons.forEach(btn => btn.classList.remove('active'));
@@ -101,6 +101,8 @@
             const navbar = document.querySelector('.navbar')
             const splash = document.getElementById('splash');
             const fold = document.querySelector('.fold');
+            const titleHanisha = document.querySelector('.title');
+            const titleJain = document.querySelector('.title.Jain');
         
             // Set a timeout for the duration of the splash animation
             setTimeout(() => {
@@ -108,6 +110,13 @@
                 fold.style.display = 'block'; // Show fold
                 navbar.style.display = 'flex';
                 fold.classList.add('fade-in'); // Add fade-in class to fold
+
+                 // Trigger animations for titles
+                titleHanisha.style.animation = 'titleHanisha 2s forwards'; // Apply animation to Hanisha title
+                titleJain.style.animation = 'titleJain 2s forwards'; // Apply animation to Jain title after a delay
+                titleHanisha.style.opacity = '1'; // Ensure Hanisha title is visible
+                titleJain.style.opacity = '1'; // Ensure Jain title is visible
+
             }, 3000); // Duration must match the splash animation duration
         });
     </script>
