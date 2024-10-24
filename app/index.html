@@ -8,6 +8,9 @@
 </head>
 <body>
     <main>
+        <div class="splash" id="splash">
+            <h1>Designing experiences that drive change</h1>
+        </div>
         <nav class="navbar">
             <button class="nav-button active">Hey !</button>
             <button class="nav-button">Who am I?</button>
@@ -72,6 +75,20 @@
             // Apply the transform to the profile-header div
             profileHeader.style.transform = `translate(${moveX}px, ${moveY}px)`;
             profileHeader.style.transition = 'transform 0.1s ease-out'; // Smooth transition
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.querySelector('.navbar')
+            const splash = document.getElementById('splash');
+            const fold = document.querySelector('.fold');
+        
+            // Set a timeout for the duration of the splash animation
+            setTimeout(() => {
+                splash.style.display = 'none'; // Hide splash
+                fold.style.display = 'block'; // Show fold
+                navbar.style.display = 'flex';
+                fold.classList.add('fade-in'); // Add fade-in class to fold
+            }, 2500); // Duration must match the splash animation duration
         });
     </script>
 </body>
