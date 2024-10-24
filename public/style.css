@@ -60,7 +60,53 @@ body {
     cursor: url('/path/to/cursor.png') 16 16, auto; /* 16 16 is the hotspot */
 }
 
+/* Add this to your existing CSS */
+.splash {
+    position: fixed; /* Cover the whole viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex; /* Center the text */
+    justify-content: center;
+    align-items: center;
+    background-color: #0B192C; /* Background color */
+    color: white; /* Text color */
+    font-size: 3em; /* Adjust size as needed */
+    animation: slideIn 2s forwards; /* Trigger animation */
+    z-index: 100; /* Ensure it is on top */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(100%); /* Start from below the screen */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateY(0); /* End at its position */
+        opacity: 1; /* End visible */
+    }
+}
+
+
+.fade-in {
+    display: block; /* Make the fold visible */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        opacity: 1; /* End visible */
+    }
+}
+
 .fold {
+    display: none;
     position: relative !important;
     padding: 1.5vh 2vw; /* Keep your padding */
     border: 1.9px solid white; /* Border all around */
@@ -114,11 +160,12 @@ body {
 .profile-header:hover {
     background-image: url('/public/image/profile.png'); /* Image shown on hover */
 }
+
 nav {
     position: fixed;
     top: 0; /* Align with the top */
     right: 0; /* Extend to the right edge */
-    display: flex;
+    display: none;
     flex-direction: column; /* Default to vertical layout */
     align-items: flex-end; /* Align items to the end */
     padding: 1.5vw;
