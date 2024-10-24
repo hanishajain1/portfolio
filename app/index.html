@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanisha Jain - Product Designer</title>
     <link rel="stylesheet" href="/public/style.css">
+    <link rel="preload" href="/public/image/profileBW.png" as="image">
+    <link rel="preload" href="/public/image/profile.png" as="image">
 </head>
 <body>
     <main>
@@ -41,6 +43,24 @@
     </main>
 
     <script>
+
+        // Preload images
+        const images = [
+            '/public/image/profileBW.png',
+            '/public/image/profile.png',
+            '/public/image/circle.png',
+            '/public/image/bottom-rectangle.png'
+        ];
+
+        const preloadImages = (imageArray) => {
+            imageArray.forEach((src) => {
+                const img = new Image();
+                img.src = src;
+            });
+        };
+
+        preloadImages(images);
+
          // Select all buttons inside the navbar
          const buttons = document.querySelectorAll('.nav-button');
 
@@ -56,7 +76,7 @@
 
           // Mouse move effect on the profile header
         const profileHeader = document.getElementById('profile-header');
-        const movementStrength = 23; // Max move distance in pixels
+        const movementStrength = 21; // Max move distance in pixels
 
         // Get the viewport width and height
         const windowWidth = window.innerWidth;
