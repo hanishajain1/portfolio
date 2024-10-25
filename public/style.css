@@ -124,8 +124,8 @@ body {
 }
 
 .headshot {
-    margin-top: 3.3vh;
-    margin-bottom: auto;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .title {
