@@ -124,7 +124,7 @@ body {
 }
 
 .headshot {
-    margin-top: 10vh;
+    margin-top: 3.3vh;
     margin-bottom: auto;
 }
 
@@ -133,7 +133,7 @@ body {
     position: relative;
     margin-top: 2.1vh;
     margin-bottom: -8.2vh;
-    font-size: 13.1vw;
+    font-size: 12vw;
     overflow: hidden;
     color: white;
     font-family: 'Gilroy-ExtraBold', sans-serif;
@@ -144,7 +144,7 @@ body {
     position: relative;
     z-index: 101;
     font-family: 'Gilroy-ExtraBoldItalic', sans-serif;
-    margin-top: -8.2vh;
+    margin-top: -9.1vh;
     animation: titleJain 2s forward 5s;
 }
 
@@ -300,8 +300,8 @@ nav {
     background-size: cover;
     background-repeat: no-repeat; /* Ensure no repetition */
     background-position: center;
-    width: 6em;
-    height: 6em;
+    width: 4.2em;
+    height: 4.2em;
     border-radius: 50%;
 }
 
