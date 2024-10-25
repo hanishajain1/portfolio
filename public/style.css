@@ -173,7 +173,11 @@ body {
 /* Specific adjustments for MacBook Air and similar screens */
 @media (max-height: 900px) {
     .headshot {
-        margin-top: 3vh; /* Adjust as needed for MacBook Air */
+        margin-top: 4.2vh; /* Adjust as needed for MacBook Air */
+    }
+
+    .title{
+        margin-bottom: -9.1vh;
     }
 }
 
