@@ -61,6 +61,7 @@ body {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
+    overflow-x: hidden;
 }
 
 /* Add this to your existing CSS */
@@ -107,7 +108,6 @@ body {
 
 
 .fade-in {
-    display: block;
     /* Make the fold visible */
     animation: fadeIn 1s forwards;
     /* Fade-in animation */
@@ -125,27 +125,32 @@ body {
     }
 }
 
-.fold {
+.sticky {
+    height: 230vh;
+    position: relative;
     pointer-events: auto;
-    display: none;
+    width: 100vw;
+}
+
+.fold {
+    top: 0 !important;
+    pointer-events: auto;
     position: -webkit-sticky;
     position: sticky !important;
     padding: 1.5vh 2vw;
-    /* Keep your padding */
     border: 1.9px solid white;
-    /* Border all around */
     border-radius: 50px;
-    /* Adjust for a more rounded effect */
     width: 100vw;
-    /* Full viewport width */
     height: 100vh;
-    /* Full viewport height */
     box-sizing: border-box;
-    /* Include padding and border in width and height */
-    overflow: hidden;
-    /* Prevent overflow of child elements */
-    top: 0;
-    /* Reset margin */
+}
+
+.WhoAmI {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0B192C;
+    color: white;
 }
 
 .page-title {
@@ -172,6 +177,7 @@ body {
     margin-left: 0;
     margin-top: 0vh;
     margin-bottom: 0;
+    animation: titleHanisha 2s forwards;
 }
 
 .Jain {
@@ -187,6 +193,7 @@ body {
     font-family: 'Gilroy-ExtraBoldItalic', sans-serif;
     text-align: center;
     /* Reset any default margins */
+    animation: titleJain 2s forwards;
 }
 
 .page-title.shrunk {
@@ -288,15 +295,6 @@ body {
     right: 0;
     transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
 
-}
-
-.sticky {
-    display: none;
-    position: relative;
-    cursor: none;
-    pointer-events: auto;
-    width: 100vw;
-    height: 200vh;
 }
 
 nav {
