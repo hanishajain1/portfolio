@@ -26,10 +26,10 @@
             <div class="custom-cursor" id="custom-cursor"></div>
         </div>
         <div class="fold">
-            <div class="headshot">
-                <h1 class="title Hanisha">HANISHA</h1>
-                <div class="profile-header" id="profile-header"></div>
-                <h1 class="title Jain">JAIN</h1>
+            <div class="profile-header" id="profile-header"></div>
+            <div class="page-title">
+                <h1 class="Hanisha">HANISHA</h1>
+                <h1 class="Jain">JAIN</h1>
             </div>
             <div class="box-bottom" id="box-bottom">
                 <div class="circle-bob"></div>
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <div class="section2">
+        <div class="sticky">
         </div>
     </main>
     <script>
@@ -78,7 +78,7 @@
             const nav = document.querySelector('.nav')
             const splash = document.getElementById('splash');
             const fold = document.querySelector('.fold');
-            const section2 = document.querySelector('.section2')
+            const sticky = document.querySelector('.sticky')
             const titleHanisha = document.querySelector('.title');
             const titleJain = document.querySelector('.title.Jain');
 
@@ -86,7 +86,7 @@
             setTimeout(() => {
                 splash.style.display = 'none'; // Hide splash
                 fold.style.display = 'block'; // Show fold
-                section2.style.display = 'block';
+                sticky.style.display = 'block';
                 nav.style.display = 'flex';
                 fold.classList.add('fade-in'); // Add fade-in class to fold
 
@@ -97,6 +97,68 @@
                 titleJain.style.opacity = '1'; // Ensure Jain title is visible
 
             }, 3000); // Duration must match the splash animation duration
+        });
+
+        window.addEventListener("scroll", () => {
+            const isMobile = window.innerWidth <= 768; // Define mobile screen breakpoint (e.g., 768px)
+            const scrollPercentage = Math.min(window.scrollY / window.innerHeight, 1);
+
+            const profileHeader = document.querySelector('.profile-header');
+            // Apply mobile or desktop class based on screen size
+            if (isMobile) {
+                profileHeader.classList.add('mobile');
+            } else {
+                profileHeader.classList.remove('mobile');
+            }
+
+            // Determine properties based on scroll and screen type
+            const width = isMobile ? 100 - (scrollPercentage * (100 - 66)) : 120 - (scrollPercentage * (120 - 66));
+            const height = isMobile ? 100 - (scrollPercentage * (100 - 66)) : 120 - (scrollPercentage * (120 - 42));
+            const borderRadius = 1.5 + (scrollPercentage * (50 - 1.5));
+
+            // Apply the transformations
+            profileHeader.style.width = `${width}vw`;
+            profileHeader.style.height = `${height}vh`;
+            profileHeader.style.borderRadius = `${borderRadius}em`;
+
+            // Center the profile header based on its current size
+            const profileHeaderWidth = width * window.innerWidth / 100; // Convert vw to pixels
+            const profileHeaderHeight = height * window.innerHeight / 100; // Convert vh to pixels
+            const centerX = (window.innerWidth - profileHeaderWidth) / 2; // Calculate left position
+            const centerY = (window.innerHeight - profileHeaderHeight) / 2; // Calculate top position
+
+            const titleHanisha = document.querySelector('.Hanisha'); // Ensure this targets .title.Hanisha
+            const titleJain = document.querySelector('.Jain');
+            const pageTitle = document.querySelector('.page-title');
+            // Apply new positiont
+            profileHeader.style.position = 'absolute';
+            profileHeader.style.left = `${centerX}px`;
+            profileHeader.style.top = `${centerY}px`;
+            // Adjust background size and position for mobile and desktop
+            if ((isMobile && width <= 66 && height <= 66) || (!isMobile && width <= 66 && height <= 42)) {
+                profileHeader.style.backgroundSize = isMobile ? `${profileHeaderWidth + 777}px ${profileHeaderHeight}px` : `${profileHeaderWidth}px ${profileHeaderHeight + 120}px`;
+                titleHanisha.classList.add('shrunk');
+                titleJain.classList.add('shrunk');
+                pageTitle.classList.add('shrunk');
+            } else {
+                profileHeader.style.backgroundSize = 'cover';
+                titleHanisha.classList.remove('shrunk');
+                titleJain.classList.remove('shrunk');
+                pageTitle.classList.remove('shrunk');
+            }
+
+        });
+
+        window.addEventListener('scroll', function () {
+            const profileHeader = document.querySelector('.profile-header');
+            const scrollPosition = window.scrollY;
+
+            // Adjust the scroll position to the point where you want the class to change
+            if (scrollPosition > 100) { // Example threshold of 100px
+                profileHeader.classList.add('pill');
+            } else {
+                profileHeader.classList.remove('pill');
+            }
         });
 
         // Select all buttons inside the navbar
