@@ -149,7 +149,11 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
+    margin: 0;
     background-color: #0B192C;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     color: white;
 }
 
@@ -175,7 +179,7 @@ body {
 .Hanisha {
     display: flex;
     margin-left: 0;
-    margin-top: 0vh;
+    margin-top: 0;
     margin-bottom: 0;
     animation: titleHanisha 2s forwards;
 }
@@ -216,6 +220,38 @@ body {
     transition: margin 1s ease;
 }
 
+.line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.who-text {
+    font-size: 3.3vw;
+    font-family: 'Gilroy-Regular', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.who-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    height: 8vh;
+    display: flex;
+}
+
+.text-image {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 10vw;
+    height: 8vh;
+    border-radius: 5em;
+}
 
 
 @keyframes titleHanisha {
