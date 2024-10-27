@@ -35,10 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const sticky = document.querySelector('.sticky')
     const titleHanisha = document.querySelector('.Hanisha');
     const titleJain = document.querySelector('.Jain');
+    const whoAmIDiv = document.querySelector('.WhoAmI');
 
     sticky.style.display = 'none';
     fold.style.display = 'none'; // Show fold
     nav.style.display = 'none';
+    whoAmIDiv.style.display = 'none';
+
 
     // Set a timeout for the duration of the splash animation
     setTimeout(() => {
@@ -49,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sticky.style.display = 'block';
         nav.style.display = 'flex';
         fold.style.opacity = '1';
+        whoAmIDiv.style.display = 'flex';
         // fold.classList.add('fade-in'); // Add fade-in class to fold
 
         // Trigger animations for titles
