@@ -1,6 +1,7 @@
+@import url('./WhoAmI.css');
+
 @import url('./fold.css');
 
-@import url('./WhoAmI.css');
 
 @font-face {
     font-family: 'Gilroy-Regular';
@@ -92,94 +93,6 @@ body {
     /* Trigger animation */
     z-index: 100;
     /* Ensure it is on top */
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateY(10%);
-        /* Start from below the screen */
-        opacity: 0;
-        /* Start invisible */
-    }
-
-    100% {
-        transform: translateY(0);
-        /* End at its position */
-        opacity: 1;
-        /* End visible */
-    }
-}
-
-.line {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.who-text {
-    font-size: 3.7vw;
-    font-family: 'Gilroy-Regular', sans-serif;
-    color: white;
-    text-align: center;
-}
-
-.who-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10vw;
-    height: 8vh;
-    display: flex;
-}
-
-.text-image {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 10vw;
-    height: 8vh;
-    border-radius: 5em;
-    transition: all 1s ease;
-}
-
-.text-image:hover {
-    width: 12vw;
-    height: 12vh;
-}
-
-
-@keyframes titleHanisha {
-    0% {
-        transform: translateX(-5%);
-        /* Start from the left */
-        opacity: 0;
-        /* Start invisible */
-    }
-
-    100% {
-        transform: translateX(0);
-        /* End at its position */
-        opacity: 1;
-        /* End visible */
-    }
-}
-
-@keyframes titleJain {
-    0% {
-        transform: translateX(5%);
-        /* Start from the right */
-        opacity: 0;
-        /* Start invisible */
-    }
-
-    100% {
-        transform: translateX(0);
-        /* End at its position */
-        opacity: 1;
-        /* End visible */
-    }
 }
 
 /* Specific adjustments for MacBook Air and similar screens */
