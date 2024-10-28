@@ -6,6 +6,7 @@
 }
 
 .fold {
+    display: none;
     top: 0 !important;
     pointer-events: auto;
     position: -webkit-sticky;
