@@ -1,0 +1,82 @@
+.sticky {
+    height: 230vh;
+    position: relative;
+    pointer-events: auto;
+    width: 100vw;
+}
+
+.fold {
+    top: 0 !important;
+    pointer-events: auto;
+    position: -webkit-sticky;
+    position: sticky !important;
+    padding: 1.5vh 2vw;
+    border: 1.9px solid white;
+    border-radius: 50px;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.page-title {
+    display: flex;
+    flex-direction: column;
+    justify-items: left;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 3000;
+    font-size: 8.2vw;
+    overflow: hidden;
+    color: white;
+    font-family: 'Gilroy-ExtraBold', sans-serif;
+    text-align: left;
+    padding-top: 15vh;
+    top: 0;
+    bottom: 0;
+    /* Reset any default margins */
+}
+
+.Hanisha {
+    display: flex;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    animation: titleHanisha 2s forwards;
+}
+
+.Jain {
+    display: flex;
+    height: auto;
+    z-index: 101;
+    font-size: 12vw;
+    overflow: hidden;
+    color: white;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Gilroy-ExtraBoldItalic', sans-serif;
+    text-align: center;
+    /* Reset any default margins */
+    animation: titleJain 2s forwards;
+}
+
+.page-title.shrunk {
+    align-items: center;
+    top: 0;
+    padding-top: 7vh;
+    bottom: 0;
+    /* Reset any default margins */
+}
+
+.Hanisha.shrunk {
+    margin-bottom: 19vh;
+    text-align: center;
+    transition: margin 1s ease;
+}
+
+.Jain.shrunk {
+    margin-top: 3vh;
+    text-align: center;
+    transition: margin 1s ease;
+}

@@ -1,0 +1,11 @@
+.WhoAmI {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: #0B192C;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
