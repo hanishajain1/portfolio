@@ -1,3 +1,7 @@
+@import url('./fold.css');
+
+@import url('./WhoAmI.css');
+
 @font-face {
     font-family: 'Gilroy-Regular';
     src: url('/public/fonts/Gilroy-Regular.ttf') format('truetype');
@@ -105,10 +109,6 @@ body {
         /* End visible */
     }
 }
-
-@import url('./fold.css');
-
-@import url('./WhoAmI.css');
 
 .line {
     display: flex;
