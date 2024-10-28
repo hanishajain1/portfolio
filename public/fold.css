@@ -80,3 +80,52 @@
     text-align: center;
     transition: margin 1s ease;
 }
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(10%);
+        /* Start from below the screen */
+        opacity: 0;
+        /* Start invisible */
+    }
+
+    100% {
+        transform: translateY(0);
+        /* End at its position */
+        opacity: 1;
+        /* End visible */
+    }
+}
+
+@keyframes titleHanisha {
+    0% {
+        transform: translateX(-5%);
+        /* Start from the left */
+        opacity: 0;
+        /* Start invisible */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* End at its position */
+        opacity: 1;
+        /* End visible */
+    }
+}
+
+@keyframes titleJain {
+    0% {
+        transform: translateX(5%);
+        /* Start from the right */
+        opacity: 0;
+        /* Start invisible */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* End at its position */
+        opacity: 1;
+        /* End visible */
+    }
+}
