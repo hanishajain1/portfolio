@@ -83,7 +83,7 @@ body {
     align-items: center;
     background-color: #0B192C;
     color: white;
-    font-size: 1.5vw;
+    font-size: 3vw;
     animation: splashSlideIn 3s forwards;
     z-index: 100;
 }
