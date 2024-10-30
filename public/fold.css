@@ -42,7 +42,7 @@
 }
 
 .page-title.desktop {
-    color: #0B192C;
+    color: white;
     flex-direction: column;
     padding-top: 0;
     align-items: flex-start;
@@ -102,11 +102,11 @@
     display: block;
     width: 120vw;
     height: 120vh;
-    opacity: 77%;
+    opacity: 100%;
     border: none;
     outline: none;
     border-radius: 1.5em;
-    background-image: url('/public/image/DesktopProfileBW.jpg');
+    background-image: url('/public/image/BestProfile.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -119,7 +119,7 @@
 }
 
 .profile-header.mobile {
-    background-image: url('/public/image/MobileProfileBW.png');
+    background-image: url('/public/image/BestProfileMobile.png');
 }
 
 @keyframes titleHanisha {
