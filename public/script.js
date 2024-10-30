@@ -58,6 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3300); // Duration must match the splash animation duration
 });
 
+const isMobile = window.innerWidth <= 768;
+const pageTitle = document.querySelector('.page-title');
+if (isMobile) {
+    pageTitle.classList.add('mobile');
+} else {
+    pageTitle.classList.add('desktop');
+}
 
 // Profile Picture Box Scroll Interaction
 window.addEventListener("scroll", () => {
@@ -95,19 +102,17 @@ window.addEventListener("scroll", () => {
     profileHeader.style.position = 'absolute';
     profileHeader.style.left = `${centerX}px`;
     profileHeader.style.top = `${centerY}px`;
+
     // Adjust background size and position for mobile and desktop
-    if ((isMobile && width <= 66 && height <= 66) || (!isMobile && width <= 66 && height <= 42)) {
-        profileHeader.style.backgroundSize = isMobile ? `${profileHeaderWidth + 777}px ${profileHeaderHeight}px` : `${profileHeaderWidth}px ${profileHeaderHeight + 120}px`;
+    if (!isMobile && width <= 66 && height <= 42) {
         titleHanisha.classList.add('shrunk');
         titleJain.classList.add('shrunk');
         pageTitle.classList.add('shrunk');
     } else {
-        profileHeader.style.backgroundSize = 'cover';
         titleHanisha.classList.remove('shrunk');
         titleJain.classList.remove('shrunk');
         pageTitle.classList.remove('shrunk');
     }
-
 });
 
 window.addEventListener('scroll', function () {
