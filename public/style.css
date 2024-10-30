@@ -69,11 +69,9 @@ body {
     overflow-x: hidden;
 }
 
-/* Add this to your existing CSS */
 .splash {
     font-family: 'Gilroy-Light', sans-serif;
     position: fixed;
-    /* Cover the whole viewport */
     top: 0;
     left: 0;
     right: 0;
@@ -81,100 +79,35 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
-    /* Center the text */
     justify-content: center;
     align-items: center;
     background-color: #0B192C;
-    /* Background color */
     color: white;
     font-size: 1.5vw;
-    /* Adjust size as needed */
-    animation: slideIn 2s forwards;
-    /* Trigger animation */
+    animation: splashSlideIn 3s forwards;
     z-index: 100;
-    /* Ensure it is on top */
 }
 
-/* Specific adjustments for MacBook Air and similar screens */
-@media (max-height: 900px) {
-    .page-title {
-        margin-top: 4.2vh;
-        /* Adjust as needed for MacBook Air */
+@keyframes splashSlideIn {
+    0% {
+        transform: translateY(12%);
+        opacity: 0;
     }
-}
 
-.profile-header {
-    position: absolute;
-    display: block;
-    width: 120vw;
-    height: 120vh;
-    opacity: 77%;
-    border: none;
-    outline: none;
-    border-radius: 1.5em;
-    background-image: url('/public/image/profileBW.png');
-    background-position: center 33%;
-    background-repeat: no-repeat;
-    left: 0;
-    top: 0;
-    right: 0;
-    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
-
-}
-
-.profile-header.mobile {
-    position: absolute;
-    display: block;
-    width: 120vw;
-    height: 120vh;
-    opacity: 77%;
-    border: none;
-    outline: none;
-    border-radius: 1.5em;
-    background-image: url('/public/image/profileBW.png');
-    background-position: center 33%;
-    background-repeat: no-repeat;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
-
-}
-
-nav {
-    position: fixed;
-    top: 0;
-    /* Align with the top */
-    right: 0;
-    /* Extend to the right edge */
-    display: none;
-    flex-direction: column;
-    /* Default to vertical layout */
-    align-items: flex-end;
-    /* Align items to the end */
-    padding: 1.5vw;
-    box-sizing: border-box;
-    /* Include padding and border in total width and height */
-    overflow: hidden;
-    /* Prevent overflow */
-    z-index: 1000;
-    /* Ensure nav is on top */
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .cursor-camera {
     position: fixed;
-    /* Sticks to the viewport */
     top: 0;
     left: 0;
     width: 100vw;
-    /* Full width */
     height: 100vh;
-    /* Full height */
     pointer-events: none;
-    /* Allow interactions with underlying elements */
     z-index: 9998;
-    /* Just below the custom cursor */
 }
 
 .custom-cursor {
@@ -185,56 +118,51 @@ nav {
     width: 50px;
     height: 50px;
     pointer-events: none;
-    /* Prevent the cursor from intercepting hover events */
     z-index: 9999;
-    /* Ensure it stays on top */
     transition: transform 0.1s ease-out;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1.5vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 1000;
 }
 
 .nav-button {
     margin: 0.55vh 0px;
-    /* Vertical spacing between buttons */
     padding: 0.5em 1.2em;
-    /* Padding based on text size */
     border: 1.5px solid white;
-    /* Border around buttons */
     border-radius: 50px;
-    /* Rounded corners */
     font-size: 1.13vw;
     color: white;
     background-color: transparent;
-    /* Transparent background */
     font-family: 'Gilroy-Bold', sans-serif;
     text-align: center;
     display: inline-block;
-    /* Button size based on content */
     white-space: nowrap;
-    /* Prevent text wrapping */
     width: auto;
-    /* Make button width flexible based on text */
     box-sizing: border-box;
-    /* Include padding and border in the element's total width and height */
     transition: all 0.3s ease;
-    /* Smooth transition on hover */
 }
 
 @media (min-width: 769px) {
     nav {
         align-items: flex-end;
-        /* Align items to start for larger devices */
     }
 }
 
-/* Hover state */
 .nav-button:hover {
     background-color: white;
-    /* Invert colors on hover */
     color: #0B192C;
-    /* Change text color */
     border-radius: 55px;
-    /* Change border radius slightly */
     font-size: 1.23vw;
-    /* Slightly increase font size */
 }
 
 /* Active state */
@@ -247,21 +175,17 @@ nav {
     border-radius: 55px;
 }
 
-.box-bottom {
+.fold-bar {
     color: white;
     position: absolute !important;
     bottom: 0px;
-    /* Distance from the bottom */
     left: 50%;
-    /* Start the div from the horizontal center */
     transform: translateX(-50%);
-    /* Shift the div back by half its width to fully center it */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 80vw;
-    /* Adjust width as needed */
     text-align: center;
 }
 
@@ -290,7 +214,6 @@ nav {
 }
 
 @media (max-width: 768px) {
-
 
     .page-title {
         top: 0;
@@ -378,7 +301,7 @@ nav {
         height: 2.1em;
     }
 
-    .box-bottom {
+    .fold-bar {
         width: 100vw;
         /* Full width of the viewport */
         position: fixed;

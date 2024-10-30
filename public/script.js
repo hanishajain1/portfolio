@@ -1,12 +1,9 @@
 
-// Custom cursor
+// Custom desktop cursor
 const customCursor = document.getElementById('custom-cursor');
-
 document.addEventListener('mousemove', (e) => {
     const cursorX = e.clientX - customCursor.offsetWidth / 2;
     const cursorY = e.clientY - customCursor.offsetHeight / 2;
-
-    // Correct string interpolation with backticks
     customCursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
 });
 
@@ -17,7 +14,6 @@ const images = [
     '/public/image/circle.png',
     '/public/image/bottom-rectangle.png'
 ];
-
 const preloadImages = (imageArray) => {
     imageArray.forEach((src) => {
         const img = new Image();
@@ -25,6 +21,7 @@ const preloadImages = (imageArray) => {
     });
 };
 
+// Splash Screen to Fold
 document.addEventListener('DOMContentLoaded', () => {
 
     preloadImages(images);
@@ -38,32 +35,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const whoAmIDiv = document.querySelector('.WhoAmI');
 
     sticky.style.display = 'none';
-    fold.style.display = 'none'; // Show fold
+    fold.style.display = 'none';
     nav.style.display = 'none';
     whoAmIDiv.style.display = 'none';
 
 
     // Set a timeout for the duration of the splash animation
     setTimeout(() => {
-        console.log("Hiding Splash, Showing Fold"); // Log for debugging
-
-        splash.style.display = 'none'; // Hide splash
-        fold.style.display = 'flex'; // Show fold
+        splash.style.display = 'none';
+        fold.style.display = 'flex';
         sticky.style.display = 'block';
         nav.style.display = 'flex';
         fold.style.opacity = '1';
         whoAmIDiv.style.display = 'flex';
-        // fold.classList.add('fade-in'); // Add fade-in class to fold
 
         // Trigger animations for titles
-        titleHanisha.style.animation = 'titleHanisha 2s forwards'; // Apply animation to Hanisha title
-        titleJain.style.animation = 'titleJain 2s forwards'; // Apply animation to Jain title after a delay
-        titleHanisha.style.opacity = '1'; // Ensure Hanisha title is visible
-        titleJain.style.opacity = '1'; // Ensure Jain title is visible
+        titleHanisha.style.animation = 'titleHanisha 2s forwards';
+        titleJain.style.animation = 'titleJain 2s forwards';
+        titleHanisha.style.opacity = '1';
+        titleJain.style.opacity = '1';
 
-    }, 3000); // Duration must match the splash animation duration
+    }, 3300); // Duration must match the splash animation duration
 });
 
+
+// Profile Picture Box Scroll Interaction
 window.addEventListener("scroll", () => {
     const isMobile = window.innerWidth <= 768; // Define mobile screen breakpoint (e.g., 768px)
     const scrollPercentage = Math.min(window.scrollY / window.innerHeight, 1);
